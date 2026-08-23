@@ -8,9 +8,10 @@ vector <pair<int,int>> find_pair(vector <int> &list_pair, int target){
     int right = list_pair.size()-1;
     
     while(left < right){
-        int sum_target = list_pair[left] + list_pair[right];
-        if(sum_target == target){
-            result.push_back({list_pair[left], list_pair[right]});
+        int sum_target = list_pair[left] + list_pair[right]; // target sum
+        
+        if(sum_target == target){ //function to check if sum is matching
+            result.push_back({list_pair[left], list_pair[right]}); //pushing pairs in to the vector array
             left++;
             right--;
         }
