@@ -2,23 +2,19 @@
 using namespace std;
 
 
-vector <pair<int,int>> sum_pointers(const vector <int> &user_input, int target){
-    int left = 0;
-    int right = user_input.size()-1;
-    vector <pair<int,int>> result; //vector pair declared
-    
+vector <pair<int,int>> find_pair(vector <int> &list_pair, int target){
+    vector <pair<int,int>> result;
+    int left=0;
+    int right = list_pair.size()-1;
     
     while(left < right){
-        
-        int target_sum = user_input[left] + user_input[right]; // sum of right and left elements
-        
-        if(target_sum == target){ //checking for elements matching
-        
-            result.push_back({user_input[left], user_input[right]}); //pushing each pair to vector  
+        int sum_target = list_pair[left] + list_pair[right];
+        if(sum_target == target){
+            result.push_back({list_pair[left], list_pair[right]});
             left++;
             right--;
         }
-        else if (target_sum < target){
+        else if(sum_target< target){
             left++;
         }
         else{
@@ -26,29 +22,29 @@ vector <pair<int,int>> sum_pointers(const vector <int> &user_input, int target){
         }
     }
     return result;
+    
 }
 
 
-
-
-
-
 int main() {
-	vector <int> list_of_numbers = {1,3,4,7,3,2,6};
+	vector <int> my_list = {5,4,7,2,3,5,1};
+	
 	int target = 8;
 	
-	sort(list_of_numbers.begin(),list_of_numbers.end()); //sort the list of pair_numbers
+	sort(my_list.begin(),my_list.end());	//sorting the list
 	
-	vector <pair<int,int>> pair_numbers = sum_pointers(list_of_numbers,target); //to return all pairs
+	vector <pair<int,int>> pairs = find_pair(my_list,target);
 	
+	if(pairs.size()==0){
+	    cout<< "not found";
+	}
+	else{
+	   cout<< "pairs found"<< endl;
+	    for (int i=0; i < pairs.size(); i++){
+	        cout<< pairs[i].first << "+" <<pairs[i].second << endl;
+	    }
+	}
 	
-    for(int i = 0; i < pair_numbers.size(); i++){
-        if (pair_numbers.empty()) // function to check if it s empty or not
-        {
-            cout << "empty pair";
-        }
-        else{
-            cout <<pair_numbers[i].first << "+" << pair_numbers[i].second << endl;
-        }
-    }
+    
+	
 }
