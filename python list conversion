@@ -1,0 +1,33 @@
+
+#We have a list of numbers given below. Add the element '10' at the 3rd position of the list and finally print the list. num_list = [5, 6, 8, 7, 9]\n",
+
+num_list = [5, 6, 8, 7, 9]
+num_list.insert(2,10)
+print(num_list)
+
+
+
+#Print all the multiples of 3 between 5 and 25.\n"
+
+for i in range(6,26,3):
+    print (i)
+    
+
+    
+
+#We have a list of numbers given below. Print the square of these numbers into another list using list comprehension.\n",
+
+num_list_new = [5, 6, 8, 7, 9]
+new_list_square=[]
+for i in num_list_new:
+    new_list_square.append(i*i)
+
+
+
+
+
+#Reverse the integer given below "n = 5623
+
+n=5623
+reversed_num = int(str(n)[::-1])
+print (reversed_num)
