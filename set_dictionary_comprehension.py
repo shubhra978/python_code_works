@@ -16,8 +16,9 @@ result = set3 & set4
 print(result)
 
 #We have a dictionary given below. 
-#Delete the item with key '3,' and add an item with key '7' and value 'Black.
+
 color = {1:'Red', 2:'Orange', 3:'White', 4:'Brown', 5:'Yellow'}
+#Delete the item with key '3,' and add an item with key '7' and value 'Black.
 color.pop(3)
 color.update({7:'Black'})
 print(color)
