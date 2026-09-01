@@ -1,15 +1,18 @@
-s="IV"
+def romanToInt(s):
 
-my_string =str(s.split())
+  
+  rom={'I':1, 'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+  
+  ans = 0
+  i = 0
+  
+  while i < len(s):
+      
+    if i + 1 < len(s) and rom[s[i+1]] > rom[s[i]]:
+      ans += rom[s[i+1]] - rom[s[i]]
+      i += 2
+    else:
+        ans += rom[s[i]]
+        i += 1
 
-my_dict={'I':1, 'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
-
-size = len(my_dict)-1
-
-result =0
-
-for items in my_dict: #iterating through items in dictionary
-    for roman_alphabet in my_string:  #iterating through defined string in dictionary
-        if roman_alphabet == items: 
-           result = result + my_dict[items]
-print(result)     
+  return ans
