@@ -1,0 +1,11 @@
+num_list = [[2, 8, 11], [4, 5, 7, 12], [8, 9, 10, 11], [19, 13, 7], [2, 5, 16]]
+added_list_value = []
+
+for items in num_list:          # items is a sub-list
+    result = 0
+    for inner_items in items:   # inner_items is an element of that sub-list
+        result += int(inner_items)
+    added_list_value.append(result)
+
+print(added_list_value)
+# Output: [21, 28, 38, 39, 23]
